@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeNav, setActiveNav] = useState('home');
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,57 +19,63 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navItems = [
+    { id: 'home', label: 'Home', path: '/' },
+    { id: 'about', label: 'About Us', path: '/#about' },
+    { id: 'services', label: 'Services', path: '/services' },
+    { id: 'projects', label: 'Our Works', path: '/#projects' },
+    { id: 'process', label: 'Process', path: '/#process' },
+    { id: 'faq', label: 'FAQ', path: '/#faq' },
+  ];
+
   return (
     <header className={`navbar ${isScrolled ? 'scrolled' : ''}`} id="navbar">
       <div className="nav-container">
-        <motion.a
-          href="#"
-          className="nav-brand"
+        <motion.div
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
         >
-          <div className="logo-mark">
-            <img src="/assets/logo.png" alt="Nexora Logo" className="logo-img" />
-          </div>
-          <span className="logo-text">Nexora</span>
-        </motion.a>
+          <Link to="/" className="nav-brand">
+            <div className="logo-mark">
+              <img src="/assets/logo.png" alt="Nexora Logo" className="logo-img" />
+            </div>
+            <span className="logo-text">Nexora</span>
+          </Link>
+        </motion.div>
 
         <nav className={`nav-menu ${mobileOpen ? 'open' : ''}`}>
-          {['home', 'about', 'services', 'projects', 'process', 'faq'].map((item) => (
-            <motion.a
-              key={item}
-              href={`#${item}`}
-              className={`nav-link ${activeNav === item ? 'active' : ''}`}
-              onClick={() => {
-                setActiveNav(item);
-                setMobileOpen(false);
-              }}
-              whileHover={{ y: -1 }}
-            >
-              {item === 'home' ? 'Home' :
-               item === 'about' ? 'About Us' :
-               item === 'services' ? 'Services' :
-               item === 'projects' ? 'Our Works' :
-               item === 'process' ? 'Process' : 'FAQ'}
-            </motion.a>
-          ))}
+          {navItems.map((item) => {
+            const isActive =
+              (item.id === 'services' && (location.pathname === '/services' || location.pathname.startsWith('/service/'))) ||
+              (item.id === 'home' && location.pathname === '/' && !location.hash);
 
-          <motion.a
-            href="#contact"
-            className={`nav-link mobile-only-link ${activeNav === 'contact' ? 'active' : ''}`}
-            onClick={() => {
-              setActiveNav('contact');
-              setMobileOpen(false);
-            }}
-            whileHover={{ y: -1 }}
-          >
-            Get In Touch
-          </motion.a>
+            return (
+              <motion.div key={item.id} whileHover={{ y: -1 }}>
+                <Link
+                  to={item.path}
+                  className={`nav-link ${isActive ? 'active' : ''}`}
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              </motion.div>
+            );
+          })}
+
+          <motion.div whileHover={{ y: -1 }}>
+            <Link
+              to="/#contact"
+              className="nav-link mobile-only-link"
+              onClick={() => setMobileOpen(false)}
+            >
+              Get In Touch
+            </Link>
+          </motion.div>
         </nav>
 
         <div className="nav-actions">
           <motion.a
-            href="#contact"
+            href="/#contact"
             className="btn btn-glass btn-nav desktop-only-btn"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}

@@ -14,16 +14,15 @@ export default function CreativeWorld() {
         >
           <h2 className="section-heading dark-text">
             Explore Our<br />
-            Creative
-            <span className="font-serif-italic">World</span>
+            Creative <span className="font-extralight">World</span>
           </h2>
 
           <p className="creative-lead-text">
-            At Nexora, we combine design, technology, and strategic thinking to create digital products and brand identities that stand out. We bring ideas to life with precision and creativity.
+            Nexora Studio is a creative powerhouse where strategy, design, and technology come together to build brands that stand out. From bold visual identities to engaging digital experiences, we transform ideas into meaningful creative solutions that connect, inspire, and move businesses forward.
           </p>
 
           <p className="creative-sub-text">
-            Our team of experts collaborates closely with clients to deliver tailored solutions that drive results.
+            We don't just create, we create with purpose, shaping what's next for ambitious brands.
           </p>
 
           <motion.div
@@ -31,15 +30,10 @@ export default function CreativeWorld() {
             whileHover={{ y: -3, scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >
-            <div className="badge-avatar">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="12" cy="12" r="10" />
-                <polygon points="12 8 16 12 12 16 12 8" />
-              </svg>
-            </div>
+            <div className="badge-avatar"></div>
             <div className="badge-info">
               <span className="badge-title">Alpha Leave</span>
-              <span className="badge-subtitle">Founder & CEO</span>
+              <span className="badge-subtitle">Founder &amp; CEO</span>
             </div>
           </motion.div>
         </motion.div>

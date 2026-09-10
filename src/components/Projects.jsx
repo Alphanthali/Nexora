@@ -157,7 +157,7 @@ export default function Projects() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span>VIEW ALL PROJECTS</span>
+            <span>View All Projects</span>
             <span className="btn-icon-circle dark">
               <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
                 <path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="#F29C38" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>

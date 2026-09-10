@@ -74,19 +74,19 @@ export default function Navbar() {
         </nav>
 
         <div className="nav-actions">
-          <motion.a
-            href="/#contact"
-            className="btn btn-glass btn-nav desktop-only-btn"
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.96 }}
-          >
-            <span>GET IN TOUCH</span>
-            <span className="btn-icon-circle light">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="#FFFFFF" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </span>
-          </motion.a>
+          <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
+            <Link
+              to="/#contact"
+              className="btn btn-glass btn-nav desktop-only-btn"
+            >
+              <span>Get In Touch</span>
+              <span className="btn-icon-circle light">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="#FFFFFF" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </span>
+            </Link>
+          </motion.div>
 
           <button
             className="mobile-toggle"

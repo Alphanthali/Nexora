@@ -26,9 +26,7 @@ export default function CtaBanner() {
             >
               <span>GET STARTED</span>
               <span className="btn-icon-circle dark">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                  <path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="#F29C38" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+                <img src="/assets/logo.png" alt="Nexora Logo" className="btn-logo-icon" />
               </span>
             </motion.a>
           </div>
@@ -38,11 +36,7 @@ export default function CtaBanner() {
             animate={{ rotate: [0, 5, 0] }}
             transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
           >
-            <svg width="340" height="340" viewBox="0 0 100 100" fill="none" opacity="0.08">
-              <path d="M50 10L10 30L50 50L90 30L50 10Z" fill="#FFFFFF"/>
-              <path d="M10 70L50 90L90 70" stroke="#FFFFFF" strokeWidth="8"/>
-              <path d="M10 50L50 70L90 50" stroke="#FFFFFF" strokeWidth="8"/>
-            </svg>
+            <img src="/assets/logo.png" alt="Nexora Logo Watermark" className="cta-watermark-logo" />
           </motion.div>
         </motion.div>
       </div>

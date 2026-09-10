@@ -43,19 +43,7 @@ export default function ServicesPage() {
       <main className="services-page-main">
         {/* Services Page Hero */}
         <section className="services-hero-section">
-          <div className="container relative-container">
-            {/* 3D Polyhedron Wireframe Graphic Top Right */}
-            <div className="hero-polyhedron-graphic">
-              <svg width="220" height="220" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <polygon points="100,20 160,50 160,130 100,170 40,130 40,50" stroke="rgba(255,255,255,0.18)" strokeWidth="1.2" fill="none" />
-                <polygon points="100,20 100,170" stroke="rgba(255,255,255,0.15)" strokeWidth="1" fill="none" />
-                <polygon points="40,50 160,130" stroke="rgba(255,255,255,0.12)" strokeWidth="1" fill="none" />
-                <polygon points="160,50 40,130" stroke="rgba(255,255,255,0.12)" strokeWidth="1" fill="none" />
-                <polygon points="100,20 160,130" stroke="rgba(255,255,255,0.1)" strokeWidth="1" fill="none" />
-                <polygon points="100,20 40,130" stroke="rgba(255,255,255,0.1)" strokeWidth="1" fill="none" />
-              </svg>
-            </div>
-
+          <div className="container">
             <motion.div
               className="services-hero-content"
               initial={{ opacity: 0, y: 30 }}
@@ -64,9 +52,9 @@ export default function ServicesPage() {
             >
               <div className="breadcrumb-nav">
                 <span className="breadcrumb-line"></span>
-                <Link to="/" className="breadcrumb-link">HOME</Link>
+                <Link to="/" className="breadcrumb-link">Home</Link>
                 <span className="breadcrumb-sep">/</span>
-                <span className="breadcrumb-current">SERVICES</span>
+                <span className="breadcrumb-current">Services</span>
               </div>
 
               <h1 className="services-hero-title">
@@ -75,7 +63,7 @@ export default function ServicesPage() {
               </h1>
 
               <div className="services-tag-badge">
-                <span>OUR SERVICES</span>
+                <span>Our Services</span>
                 <span className="down-arrow-circle">
                   <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
                     <path d="M6 1V11M6 11L1 6M6 11L11 6" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -90,22 +78,7 @@ export default function ServicesPage() {
         <section className="services-grid-section">
           <div className="container">
             <div className="services-main-layout">
-              {/* Left Architectural Graphic */}
-              <div className="services-left-graphic">
-                <svg width="200" height="600" viewBox="0 0 180 580" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="10" y="10" width="160" height="560" stroke="rgba(255,255,255,0.12)" strokeWidth="1.2" />
-                  <line x1="90" y1="10" x2="90" y2="570" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
-                  <circle cx="90" cy="80" r="70" stroke="rgba(255,255,255,0.12)" strokeWidth="1.2" />
-                  <circle cx="90" cy="220" r="70" stroke="rgba(255,255,255,0.12)" strokeWidth="1.2" />
-                  <circle cx="90" cy="360" r="70" stroke="rgba(255,255,255,0.12)" strokeWidth="1.2" />
-                  <circle cx="90" cy="500" r="70" stroke="rgba(255,255,255,0.12)" strokeWidth="1.2" />
-                  <line x1="10" y1="150" x2="170" y2="150" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
-                  <line x1="10" y1="290" x2="170" y2="290" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
-                  <line x1="10" y1="430" x2="170" y2="430" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
-                </svg>
-              </div>
-
-              {/* Right Services 2x2 Grid */}
+              {/* Services 2x2 Grid */}
               <div className="services-cards-grid">
                 {servicesData.map((item, index) => (
                   <motion.div
@@ -126,7 +99,7 @@ export default function ServicesPage() {
                     </div>
 
                     <Link to={`/service/${item.id}`} className="service-read-more-btn">
-                      <span>READ MORE</span>
+                      <span>Read More</span>
                       <span className="btn-icon-circle orange">
                         <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
                           <path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="#FFFFFF" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -161,9 +134,7 @@ export default function ServicesPage() {
               >
                 <span>CONTACT US</span>
                 <span className="btn-icon-circle dark">
-                  <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
-                    <path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="#F29C38" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+                  <img src="/assets/logo.png" alt="Nexora Logo" className="btn-logo-icon" />
                 </span>
               </motion.a>
             </div>

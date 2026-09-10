@@ -45,20 +45,6 @@ export default function Services() {
           <p className="services-description">
             Empowering brands through innovative design and cutting-edge technology.
           </p>
-
-          <motion.a
-            href="#contact"
-            className="btn btn-orange"
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.96 }}
-          >
-            <span>GET STARTED</span>
-            <span className="btn-icon-circle dark">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="#F29C38" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </span>
-          </motion.a>
         </motion.div>
 
         <motion.div

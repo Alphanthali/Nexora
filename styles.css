@@ -130,9 +130,9 @@ img {
   border-radius: var(--radius-pill);
   font-family: var(--font-sans);
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
+  text-transform: capitalize;
   cursor: pointer;
   border: none;
   transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
@@ -394,39 +394,40 @@ img {
 }
 
 .creative-lead-text {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: var(--text-dark);
-  line-height: 1.6;
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--text-muted-light);
+  line-height: 1.65;
 }
 
 .creative-sub-text {
   font-size: 0.95rem;
+  font-weight: 300;
   color: var(--text-muted-light);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .agency-badge-card {
   display: inline-flex;
   align-items: center;
   gap: 14px;
-  padding: 12px 20px;
-  background: #ffffff;
-  border-radius: var(--radius-pill);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  padding: 14px 20px;
+  background: #eaebef;
+  border-radius: 16px;
+  border: none;
+  box-shadow: none;
   width: fit-content;
-  margin-top: 12px;
+  margin-top: 24px;
 }
 
 .badge-avatar {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: #eef0f5;
+  background: #d0d3dc;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-dark);
 }
 
 .badge-info {
@@ -436,12 +437,13 @@ img {
 
 .badge-title {
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-dark);
 }
 
 .badge-subtitle {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 400;
   color: var(--text-muted-light);
 }
 
@@ -964,6 +966,20 @@ img {
   pointer-events: none;
 }
 
+.cta-watermark-logo {
+  width: 320px;
+  height: 320px;
+  object-fit: contain;
+  opacity: 0.12;
+  filter: brightness(0) invert(1);
+}
+
+.btn-logo-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
 /* ==========================================================================
    FOOTER
    ========================================================================== */
@@ -1302,16 +1318,14 @@ img {
   background-color: var(--bg-dark);
 }
 
-.services-main-layout {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 60px;
-  align-items: flex-start;
+.hero-polyhedron-graphic,
+.services-left-graphic {
+  display: none !important;
 }
 
-.services-left-graphic {
-  position: sticky;
-  top: 140px;
+.services-main-layout {
+  display: block;
+  width: 100%;
 }
 
 .services-cards-grid {
@@ -1327,11 +1341,11 @@ img {
 }
 
 .service-card-title {
-  font-size: 1.45rem;
+  font-size: 1.85rem;
   font-weight: 700;
   color: #ffffff;
-  line-height: 1.25;
-  margin-bottom: 14px;
+  line-height: 1.2;
+  margin-bottom: 16px;
 }
 
 .service-card-desc {
@@ -1581,12 +1595,15 @@ img {
   .services-main-layout {
     grid-template-columns: 1fr;
   }
+
   .services-left-graphic {
     display: none;
   }
+
   .approach-grid-layout {
     grid-template-columns: 1fr;
   }
+
   .other-services-grid {
     grid-template-columns: 1fr;
   }
@@ -1596,9 +1613,11 @@ img {
   .services-cards-grid {
     grid-template-columns: 1fr;
   }
+
   .hero-polyhedron-graphic {
     display: none;
   }
+
   .pricing-tier-row {
     grid-template-columns: 1fr;
     gap: 12px;

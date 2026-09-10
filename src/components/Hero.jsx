@@ -59,7 +59,7 @@ export default function Hero() {
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
             >
-              <span>WHAT WE DO</span>
+              <span>What We Do</span>
               <span className="btn-icon-circle dark">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                   <path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="#F29C38" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
@@ -73,7 +73,7 @@ export default function Hero() {
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
             >
-              <span>OUR PROJECTS</span>
+              <span>Our Projects</span>
               <span className="btn-icon-circle light">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                   <path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="#FFFFFF" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />

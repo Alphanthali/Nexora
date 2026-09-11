@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 export default function CtaBanner() {
   return (
@@ -18,17 +19,19 @@ export default function CtaBanner() {
               Your Next <span className="font-serif-italic">Project</span>
             </h2>
 
-            <motion.a
-              href="mailto:hello@nexorastudio.com"
-              className="btn btn-orange"
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.96 }}
-            >
-              <span>GET STARTED</span>
-              <span className="btn-icon-circle dark">
-                <img src="/assets/logo.png" alt="Nexora Logo" className="btn-logo-icon" />
-              </span>
-            </motion.a>
+            <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
+              <Link
+                to="/#contact"
+                className="btn btn-glass btn-nav"
+              >
+                <span>Get In Touch</span>
+                <span className="btn-icon-circle light">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="#FFFFFF" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </span>
+              </Link>
+            </motion.div>
           </div>
 
           <motion.div
@@ -36,7 +39,7 @@ export default function CtaBanner() {
             animate={{ rotate: [0, 5, 0] }}
             transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
           >
-            <img src="/assets/logo.png" alt="Nexora Logo Watermark" className="cta-watermark-logo" />
+            <img src="/assets/logo.png" alt="Nexora Logo Mark" className="cta-watermark-logo" />
           </motion.div>
         </motion.div>
       </div>

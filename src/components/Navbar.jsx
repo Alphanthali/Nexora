@@ -22,7 +22,7 @@ export default function Navbar() {
   const navItems = [
     { id: 'home', label: 'Home', path: '/' },
     { id: 'about', label: 'About Us', path: '/#about' },
-    { id: 'services', label: 'Services', path: '/services' },
+    { id: 'services', label: 'Services', path: '/#services' },
     { id: 'projects', label: 'Our Works', path: '/#projects' },
     { id: 'process', label: 'Process', path: '/#process' },
     { id: 'faq', label: 'FAQ', path: '/#faq' },
@@ -46,7 +46,6 @@ export default function Navbar() {
         <nav className={`nav-menu ${mobileOpen ? 'open' : ''}`}>
           {navItems.map((item) => {
             const isActive =
-              (item.id === 'services' && (location.pathname === '/services' || location.pathname.startsWith('/service/'))) ||
               (item.id === 'home' && location.pathname === '/' && !location.hash);
 
             return (

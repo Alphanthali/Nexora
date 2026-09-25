@@ -1,30 +1,9 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-
-const servicesData = [
-  {
-    num: '01',
-    title: 'Branding and Identity Design',
-    desc: 'Crafting unique visual identities, logo marks, brand voice guidelines, and comprehensive aesthetic systems that leave a lasting impression.'
-  },
-  {
-    num: '02',
-    title: 'Website Design and Development',
-    desc: 'Building high-performance, responsive websites with immersive animations, smooth micro-interactions, and robust engineering.'
-  },
-  {
-    num: '03',
-    title: 'UI/UX Design and Prototyping',
-    desc: 'Designing human-centered mobile and web application interfaces that combine visual aesthetics with effortless user flows.'
-  },
-  {
-    num: '04',
-    title: 'Creative Consulting and Development',
-    desc: 'Guiding tech leaders and brands through digital transformation, product strategy, content direction, and design audits.'
-  }
-];
+import { useContent } from '../context/ContentContext';
 
 export default function Services() {
+  const { services } = useContent();
   const [activeService, setActiveService] = useState(0);
 
   return (
@@ -55,16 +34,16 @@ export default function Services() {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
         >
           <ul className="services-accordion">
-            {servicesData.map((item, idx) => (
+            {services.map((item, idx) => (
               <motion.li
-                key={idx}
+                key={item.id || idx}
                 className={`service-item ${activeService === idx ? 'active' : ''}`}
                 onClick={() => setActiveService(idx === activeService ? null : idx)}
                 whileHover={{ x: 6 }}
                 transition={{ duration: 0.2 }}
               >
                 <div className="service-header">
-                  <span className="service-num">{item.num}</span>
+                  <span className="service-num">{item.num || String(idx + 1).padStart(2, '0')}</span>
                   <span className="service-title">{item.title}</span>
                   <motion.span
                     className="service-icon"
@@ -84,7 +63,9 @@ export default function Services() {
                       transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                       style={{ overflow: 'hidden' }}
                     >
-                      <p style={{ paddingTop: '16px', paddingLeft: '42px', color: 'var(--text-muted-dark)', lineHeight: '1.6' }}>{item.desc}</p>
+                      <p style={{ paddingTop: '16px', paddingLeft: '42px', color: 'var(--text-muted-dark)', lineHeight: '1.6' }}>
+                        {item.desc}
+                      </p>
                     </motion.div>
                   )}
                 </AnimatePresence>

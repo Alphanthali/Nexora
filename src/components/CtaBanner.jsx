@@ -24,10 +24,10 @@ export default function CtaBanner() {
                 to="/#contact"
                 className="btn btn-glass btn-nav"
               >
-                <span>Get In Touch</span>
+                <span>Start a Project</span>
                 <span className="btn-icon-circle light">
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="#FFFFFF" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="#FFFFFF" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </span>
               </Link>

@@ -997,13 +997,26 @@ img {
   padding-bottom: 60px;
 }
 
+.footer-logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  text-decoration: none;
+}
+
+.footer-logo-icon {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
 .footer-logo {
-  font-size: 2.2rem;
-  font-weight: 800;
+  font-size: 3.5rem;
+  font-weight: 500;
   letter-spacing: -0.03em;
   color: var(--text-light);
-  margin-bottom: 16px;
-  display: block;
+  line-height: 1;
 }
 
 .footer-tagline {

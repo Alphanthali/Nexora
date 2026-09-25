@@ -21,11 +21,11 @@ export default function Navbar() {
 
   const navItems = [
     { id: 'home', label: 'Home', path: '/' },
+    { id: 'works', label: 'Portfolio', path: '/works' },
+    { id: 'services', label: 'Services', path: '/services' },
+    { id: 'contact', label: 'Contact', path: '/#contact' },
+    { id: 'blog', label: 'Blog', path: '/#blog' },
     { id: 'about', label: 'About Us', path: '/#about' },
-    { id: 'services', label: 'Services', path: '/#services' },
-    { id: 'projects', label: 'Our Works', path: '/#projects' },
-    { id: 'process', label: 'Process', path: '/#process' },
-    { id: 'faq', label: 'FAQ', path: '/#faq' },
   ];
 
   return (
@@ -46,7 +46,9 @@ export default function Navbar() {
         <nav className={`nav-menu ${mobileOpen ? 'open' : ''}`}>
           {navItems.map((item) => {
             const isActive =
-              (item.id === 'home' && location.pathname === '/' && !location.hash);
+              (item.id === 'home' && location.pathname === '/' && !location.hash) ||
+              (item.id === 'works' && (location.pathname === '/works' || location.pathname === '/projects')) ||
+              (item.id === 'services' && location.pathname === '/services');
 
             return (
               <motion.div key={item.id} whileHover={{ y: -1 }}>
@@ -81,7 +83,7 @@ export default function Navbar() {
               <span>Get In Touch</span>
               <span className="btn-icon-circle light">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                  <path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="#FFFFFF" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="#FFFFFF" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </span>
             </Link>

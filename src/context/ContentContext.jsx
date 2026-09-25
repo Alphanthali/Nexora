@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { projectsData as defaultProjectsData } from '../data/projectsData';
+import { supabase } from '../lib/supabaseClient';
 
 const defaultFaqsData = [
   {
@@ -126,6 +127,26 @@ export function ContentProvider({ children }) {
   useEffect(() => {
     localStorage.setItem('nexora_site_info', JSON.stringify(siteInfo));
   }, [siteInfo]);
+
+  // Fetch initial data from Supabase if available
+  useEffect(() => {
+    if (!supabase) return;
+    async function loadFromSupabase() {
+      try {
+        const { data: projData } = await supabase.from('projects').select('*');
+        if (projData && projData.length > 0) setProjects(projData);
+
+        const { data: faqData } = await supabase.from('faqs').select('*');
+        if (faqData && faqData.length > 0) setFaqs(faqData);
+
+        const { data: srvData } = await supabase.from('services').select('*');
+        if (srvData && srvData.length > 0) setServices(srvData);
+      } catch (err) {
+        console.warn('Supabase fetch notice:', err);
+      }
+    }
+    loadFromSupabase();
+  }, []);
 
   // Projects Handlers
   const addProject = (newProject) => {
